@@ -72,12 +72,12 @@ int main(int argc, char *argv[]) {
     Eigen::MatrixXi E;
 
     // Read vertex positions from the text file
-    read_vertex_positions("/Users/zhaoyanpeng/582_final_code/vertices.txt", V);
+    read_vertex_positions("/Users/zhaoyanpeng/582final/vertices.txt", V);
 
     // Create edges between the consecutive vertices
     int num_vertices = V.rows();
     E.resize(num_vertices, 2);
-    for (int i = 0; i < num_vertices; ++i) {
+    for (int i = 0; i < num_vertices-1; ++i) {
         E(i, 0) = i;
         E(i, 1) = (i + 1) % num_vertices;
     }
